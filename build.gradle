@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+apply from: 'stata.gradle'
+
+group 'io.github.diogocp'
+version '1.0.0'
+
+description = "SLF4J Stata Binding"
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs "libs"
+    }
+}
+
+dependencies {
+    compile group: 'com.stata.sfi', name: 'stata-sfi', version: '[13,)'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
+}
