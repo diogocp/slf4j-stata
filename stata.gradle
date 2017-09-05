@@ -16,9 +16,9 @@ tasks.compileJava.dependsOn {
     }
 }
 
-task(downloadStataSfi) {
+task('downloadStataSfi') {
     doLast {
-        Date adoDate = getAdoDate(13)
+        Date adoDate = getAdoDate(stataVersion)
         Path zipFile = downloadAdoZip(stataVersion, adoDate)
 
         String isoDate = new SimpleDateFormat("yyyyMMdd", Locale.US).format(adoDate)
